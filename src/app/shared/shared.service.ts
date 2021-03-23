@@ -12,4 +12,10 @@ export class SharedService {
     emitWeatherChange(change: string) {
       this.emitWeatherSource.next(change);
     }
+
+    private emitNotesSource = new Subject<Array<{id: number, content: string}>>();
+    changeNotesEmitted$ = this.emitNotesSource.asObservable();
+    emitNotesChange(change: Array<{id: number, content: string}>) {
+      this.emitNotesSource.next(change);
+    }
 }

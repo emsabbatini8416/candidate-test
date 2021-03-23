@@ -4,3 +4,11 @@
     Bonus points for extra features or out of the box creativity.</p>
   <p>You do not need a backend to save the data, save to the NotesService only.</p>
 </div>
+<div class="notes-container">
+	<app-note *ngFor="let note of notes" (dismiss)="deleteNote($event, note)" (focusout)="saveNote($event, note)" id="{{note.id}}">{{note.content}}</app-note>
+</div>
+<div (click)="addNote()" (enter)="addNote()" tabindex="0" class="notes-buttom">
+	+
+</div>
+
+
