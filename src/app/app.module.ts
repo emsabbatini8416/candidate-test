@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SimpleListModule} from './components/simple-list/simple-list.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import {SharedService} from './shared/shared.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
     SimpleListModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
