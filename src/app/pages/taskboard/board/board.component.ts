@@ -23,7 +23,13 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.dragulaService.createGroup(this.list, {
       revertOnSpill: true,
       accepts: (el, target, source, sibling) => {
-        return true;
+        if (source.id == 'list2' && source.id !== target.id) {
+          return true;
+        } else if (source.id == 'list1' && target.id != 'list3') {
+          return true
+        } else if (source.id == 'list3' && target.id != 'list1') {
+          return true
+        } else { return false }
       }
     });
 
